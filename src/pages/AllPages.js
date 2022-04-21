@@ -1,11 +1,11 @@
 import React from "react";
 import { Route, Routes } from "react-router-dom";
-import Bibliotheque from "./Bibliotheque";
+import UserLibrary from "./UserLibrary";
 
 function AllPages() {
   return (
     <Routes>
-      <Route path="/bibliotheque" element={<Bibliotheque />} />
+      <Route path="/library" element={<UserLibrary />} />
     </Routes>
   );
 }

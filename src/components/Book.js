@@ -1,33 +1,34 @@
 import React from "react";
-import services from "./../services";
 import { useState, useEffect } from "react";
+import ISBNApi from "../ISBNapi";
 
-function Book() {
-  const [books, setBooks] = useState([]);
+function Book({ books }) {
+  const [apiBook, setApiBook] = useState([]);
 
-  function fetchAndSetBooks() {
-    services
-      .getBookList()
-      .then((books) => setBooks(books))
-      .catch((err) => {
-        console.log(err);
-      });
+  let ISBN = 9780670919536;
+
+  function APIFetch(data) {
+    ISBNApi.getDetailsFromISBN(data)
+      .then((apiBook) => setApiBook(apiBook))
+      .catch((err) => console.log(err));
   }
 
   useEffect(() => {
-    fetchAndSetBooks();
-    console.log(services.getBookList());
+    APIFetch();
   }, []);
 
   return (
     <div>
       <h1>Mes livres.</h1>
       {books.map((book) => (
-        <div>
-          <p key={book.ISBN}>{book.ISBN}</p>
-          <p key={book.ISBN}>{book.user}</p>
+        <div key={book.ISBN}>
+          <p>{book.ISBN}</p>
+          <p key={book.user}>{book.user}</p>
         </div>
       ))}
+      <div>
+        <p>test</p>
+      </div>
     </div>
   );
 }
