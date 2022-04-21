@@ -3,6 +3,7 @@ import Book from "../components/Book";
 import services from "./../services";
 import { useState, useEffect } from "react";
 import ISBNApi from "../ISBNapi";
+import Navbar from "../components/Navbar";
 
 function Bibliotheque() {
   const [books, setBooks] = useState([]);
@@ -22,6 +23,7 @@ function Bibliotheque() {
 
   return (
     <div>
+      <Navbar />
       <Book books={books} />
     </div>
   );
