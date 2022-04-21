@@ -4,6 +4,7 @@ import services from "./../services";
 import { useState, useEffect } from "react";
 import ISBNApi from "../ISBNapi";
 import "./UserLibrary.css";
+import Navbar from "../components/Navbar";
 
 function Bibliotheque() {
   const [books, setBooks] = useState([]);
@@ -23,6 +24,7 @@ function Bibliotheque() {
 
   return (
     <div>
+      <Navbar />
       <h1>Mes livres.</h1>
       <div className="library">
         {books.map((book) => (

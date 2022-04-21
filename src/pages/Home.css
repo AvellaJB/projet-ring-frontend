@@ -1,0 +1,15 @@
+.textOne {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  background-color: black;
+  border: solid 2px orange;
+}
+
+.text {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  color: orange;
+  font-size: xx-large;
+  font-weight: bold;
+}
