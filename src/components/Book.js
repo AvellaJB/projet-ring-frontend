@@ -1,34 +1,17 @@
 import React from "react";
-import { useState, useEffect } from "react";
-import ISBNApi from "../ISBNapi";
-
-function Book({ books }) {
-  const [apiBook, setApiBook] = useState([]);
-
-  let ISBN = 9780670919536;
-
-  function APIFetch(data) {
-    ISBNApi.getDetailsFromISBN(data)
-      .then((apiBook) => setApiBook(apiBook))
-      .catch((err) => console.log(err));
-  }
-
-  useEffect(() => {
-    APIFetch();
-  }, []);
+import "./Book.css";
+function Book(bookDetails) {
+  console.log(bookDetails.bookDetails.title);
 
   return (
-    <div>
-      <h1>Mes livres.</h1>
-      {books.map((book) => (
-        <div key={book.ISBN}>
-          <p>{book.ISBN}</p>
-          <p key={book.user}>{book.user}</p>
-        </div>
-      ))}
-      <div>
-        <p>test</p>
+    <div className="book-container">
+      <h2>{bookDetails.bookDetails.title}</h2>
+      <div className="img-container">
+        <img
+          src={`https://covers.openlibrary.org/b/isbn/${bookDetails.bookDetails.isbn_13}-L.jpg`}
+        />
       </div>
+      <h3>{bookDetails.bookDetails.publish_date}</h3>
     </div>
   );
 }

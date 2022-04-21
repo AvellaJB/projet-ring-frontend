@@ -1,8 +1,9 @@
 import React from "react";
-import Book from "../components/Book";
+import SmartBook from "../components/SmartBook";
 import services from "./../services";
 import { useState, useEffect } from "react";
 import ISBNApi from "../ISBNapi";
+import "./UserLibrary.css";
 
 function Bibliotheque() {
   const [books, setBooks] = useState([]);
@@ -22,7 +23,12 @@ function Bibliotheque() {
 
   return (
     <div>
-      <Book books={books} />
+      <h1>Mes livres.</h1>
+      <div className="library">
+        {books.map((book) => (
+          <SmartBook ISBN={book.ISBN} />
+        ))}
+      </div>
     </div>
   );
 }
