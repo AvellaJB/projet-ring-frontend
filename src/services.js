@@ -19,6 +19,9 @@ const services = {
   login(body) {
     return base.post("/login", body).then((res) => res.data);
   },
+  register(body) {
+    return base.post("/register", body).then((res) => res.data);
+  },
 };
 
 export default services;

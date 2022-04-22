@@ -23,6 +23,10 @@ function Login({ setConnected }) {
     updateBody(name, value);
   }
 
+  /* Une fois qu'on submit on envoie les infos à la BDD
+  On set le setConnected à true qui remonte dans Allpages et le distribue aux autres
+  composants.
+  Crée également un élement de localstorage. */
   function handleSubmitLogin(e) {
     e.preventDefault();
     services
