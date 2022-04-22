@@ -1,8 +1,9 @@
 import React from "react";
 import "./Navbar.css";
-import { BrowserRouter as Router, Link, Route, Switch } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 function Navbar({ connected, setConnected }) {
+  /* Création de la fonction disconnect qui est lancée lorsque l'on appuie sur le bouton. */
   function disconnect() {
     localStorage.removeItem("connected");
     setConnected(false);
@@ -15,6 +16,7 @@ function Navbar({ connected, setConnected }) {
         <Link to="/" className="linkNavbar">
           Accueil
         </Link>
+        {/* Affichage dynamique des élément de Nav en fonction de si on est connecté ou pas. */}
         {connected === true && (
           <Link to="/library" className="linkNavbar">
             Ma Bibliothèque

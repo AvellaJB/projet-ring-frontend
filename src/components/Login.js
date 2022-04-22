@@ -2,15 +2,21 @@ import { useState } from "react";
 import services from "../services";
 
 function Login({ setConnected }) {
+  /* On décide de stocker les infos du formulaire dans un State. */
+
   const [body, setBody] = useState({
     mail: "",
     password: "",
     pseudo: "",
   });
 
+  /* Pour mettre à jour notre body. On récupère l'object déjà existant et on ajoute
+  la valeurs aux différentes clés (mail : test@mail.com) */
   function updateBody(key, value) {
     setBody({ ...body, [key]: value });
   }
+
+  /* Récupère simplement l'input dans le e.target. */
 
   function handleChangeInput(e) {
     const { name, value } = e.target;

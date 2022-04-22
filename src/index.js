@@ -8,6 +8,8 @@ import { BrowserRouter } from "react-router-dom";
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
+    {/* On mets en place notre BrowserRoute au plus haut possible dans notre app
+    pour qu'on ai bien accès à Route et Routes partout dans React. */}
     <BrowserRouter>
       <App />
     </BrowserRouter>

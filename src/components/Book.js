@@ -1,7 +1,8 @@
 import React from "react";
 import "./Book.css";
 function Book(bookDetails) {
-  console.log(bookDetails.bookDetails.title);
+  /* Ici c'est notre livre simple qui prend les détails envoyés par l'API de OpenLibrary et
+les affiches. La mise en forme est également gérée ici (CSS) */
 
   return (
     <div className="book-container">
