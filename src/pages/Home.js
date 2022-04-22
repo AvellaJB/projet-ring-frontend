@@ -7,7 +7,6 @@ import "./Home.css";
 function Home() {
   return (
     <div>
-      <Navbar />
       <div className="textOne">
         <p className="text">
           Avec RING PROJECT, créez votre propre bibliothèque numérique et

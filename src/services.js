@@ -11,6 +11,9 @@ const services = {
   AddBook(body) {
     return base.post("/add-book", body).then((res) => res.data);
   },
+  login(body) {
+    return base.post("/login", body).then((res) => res.data);
+  },
 };
 
 export default services;

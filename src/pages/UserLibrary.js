@@ -24,7 +24,6 @@ function Bibliotheque() {
 
   return (
     <div>
-      <Navbar />
       <h1>Mes livres.</h1>
       <div className="library">
         {books.map((book) => (

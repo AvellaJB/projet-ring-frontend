@@ -5,7 +5,6 @@ import Navbar from "../components/Navbar";
 function Ajout() {
   return (
     <div>
-      <Navbar />
       <AddBook />
     </div>
   );
