@@ -16,13 +16,13 @@ const services = {
   /* Cette fonction ajoute un livre à la BDD mongo */
   AddBook(body) {
     const token = localStorage.getItem("jwt");
-    console.log(token);
     return base
       .post("/add-book", body, {
         headers: { Authorization: `Bearer ${token}` },
       })
       .then((res) => res.data);
   },
+
   /* Cette fonction envoie les infos de connexions aux BACK END, la vérification
   des correspondance de mail / mdp se fait dans le back. */
   login(body) {

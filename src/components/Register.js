@@ -1,6 +1,7 @@
 import React from "react";
 import { useState } from "react";
 import services from "../services";
+import "./Register.css";
 
 function Register() {
   const [body, setBody] = useState({
@@ -34,17 +35,37 @@ function Register() {
 
   return (
     <div>
-      <form onSubmit={handleSubmitLogin} onChange={handleChangeInput}>
-        <h1>Register</h1>
-        <label>Pseudo</label>
-        <input type="text" name="pseudo" />
-        <label>Email</label>
-        <input type="email" name="mail" />
-        <label>Password</label>
-        <input type="password" name="password" />
-        <label>Confirm Password</label>
-        <input type="password" name="confirmPassword" />
-        <button>Envoyer</button>
+      <form
+        className="formRegister"
+        onSubmit={handleSubmitLogin}
+        onChange={handleChangeInput}
+      >
+        <h1>... non, alors faisons connaissance !</h1>
+        <input
+          className="inputRegister"
+          placeholder="Votre pseudo"
+          type="text"
+          name="pseudo"
+        />
+        <input
+          className="inputRegister"
+          placeholder="Votre email"
+          type="email"
+          name="mail"
+        />
+        <input
+          className="inputRegister"
+          placeholder="Votre mot de passe"
+          type="password"
+          name="password"
+        />
+        <input
+          className="inputRegister"
+          placeholder="Confirmez votre mot de passe"
+          type="password"
+          name="confirmPassword"
+        />
+        <button className="buttonRegister">Envoyer</button>
       </form>
     </div>
   );

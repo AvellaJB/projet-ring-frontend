@@ -34,11 +34,6 @@ function Navbar({ connected, setConnected }) {
             Ma Bibliothèque
           </Link>
         )}
-        {connected === true && (
-          <Link to="/ajout" className="linkNavbar">
-            Ajout
-          </Link>
-        )}
         {connected === false && (
           <Link to="/login" className="linkNavbar">
             Se connecter
