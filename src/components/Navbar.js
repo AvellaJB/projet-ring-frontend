@@ -1,6 +1,7 @@
 import React from "react";
 import "./Navbar.css";
 import { Link, useNavigate } from "react-router-dom";
+import { ImBooks } from "react-icons/im";
 
 function Navbar({ connected, setConnected }) {
   /* Création de la fonction disconnect qui est lancée lorsque l'on appuie sur le bouton. */
@@ -14,7 +15,15 @@ function Navbar({ connected, setConnected }) {
 
   return (
     <div className="navbar">
-      <p className="logo">RING PROJECT</p>
+      <Link className="logo" to="/">
+        <div className="logo-group">
+          <div className="logo-name">RING PROJECT</div>
+          <div className="logo-sv">
+            {" "}
+            <ImBooks />
+          </div>
+        </div>
+      </Link>
       <div className="linksNavbar">
         <Link to="/" className="linkNavbar">
           Accueil

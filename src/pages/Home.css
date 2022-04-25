@@ -1,15 +1,62 @@
-.textOne {
+.home-container {
   display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
-  background-color: black;
-  border: solid 2px orange;
+  height: 100vh;
 }
 
-.text {
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  color: orange;
-  font-size: xx-large;
-  font-weight: bold;
+.presentation-section {
+  width: 50%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
+
+.presentation-title {
+  margin: 2rem;
+}
+
+.presentation-description {
+  margin: 2rem;
+}
+
+.CTA {
+  padding: 2rem;
+}
+
+button {
+  background-color: cyan;
+  border: none;
+  font-size: 2rem;
+  padding: 0.3rem;
+  display: flex;
+  align-items: center;
+  border-radius: 1rem;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+  cursor: pointer;
+}
+
+button, svg {
+  background-color: aliceblue;
+}
+
+h2{
+  font-weight: 300;
+}
+
+h1 {
+  font-size: 3rem;
+}
+
+.hero-section {
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 7rem;
+}
+
+.hero-section, img {
+  object-fit: cover;
+  overflow: hidden;
+}
+

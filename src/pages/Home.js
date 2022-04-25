@@ -1,24 +1,33 @@
-import Navbar from "../components/Navbar";
-import img1 from "./img1.jpeg";
-import img2 from "./img2.jpg";
-
 import "./Home.css";
+import heroimg from "../pages/heroimg.jpg";
+import { AiOutlineArrowRight } from "react-icons/ai";
 
 function Home() {
   return (
     <div>
-      <div className="textOne">
-        <p className="text">
-          Avec RING PROJECT, créez votre propre bibliothèque numérique et
-          emportez la partout avec vous à travers le monde !
-        </p>
-        <img src={img1} />
-      </div>
-      <div className="textOne">
-        <img src={img2} />
-        <p className="text">
-          Pour cela, rien de plus simple, il vous suffit de créer un compte
-        </p>
+      <div className="home-container">
+        <div className="presentation-section">
+          <div className="presentation-text">
+            <div className="presentation-title">
+              <h1>Bienvenue sur RING Project</h1>
+            </div>
+            <div className="presentation-description">
+              <h2>
+                Gérez votre biblothèque et partagez vos livres. Simplement.
+              </h2>
+            </div>
+            <div className="CTA">
+              <button>
+                Get Started <AiOutlineArrowRight />
+              </button>
+            </div>
+          </div>
+        </div>
+        <div className="hero-section">
+          <div className="hero-img">
+            <img src={heroimg} alt="reading woman" />
+          </div>
+        </div>
       </div>
     </div>
   );
