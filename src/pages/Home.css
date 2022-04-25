@@ -35,9 +35,6 @@ button {
   cursor: pointer;
 }
 
-button, svg {
-  background-color: aliceblue;
-}
 
 h2{
   font-weight: 300;

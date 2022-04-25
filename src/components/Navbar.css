@@ -43,3 +43,7 @@
 .logo-svg {
   margin: 1rem;
 }
+
+a {
+  cursor: pointer;
+}
