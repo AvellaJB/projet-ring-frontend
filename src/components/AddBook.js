@@ -1,5 +1,6 @@
 import React from "react";
 import services from "../services";
+import "./AddBook.css";
 
 function getFormValue(elements, name) {
   return elements[name]?.value;
@@ -23,10 +24,16 @@ export function AddBook() {
     <div>
       <form onSubmit={handleSubmit}>
         <div>
-          <input name="ISBN" type="text" placeholder="Entrez le numéro ISBN" />
+          <h1>Ajoutez un livre,</h1>
+          <input
+            className="inputAddBook"
+            name="ISBN"
+            type="text"
+            placeholder="Entrez le numéro ISBN"
+          />
         </div>
         <div>
-          <button>Ajouter</button>
+          <button className="buttonAddBook">Ajouter</button>
         </div>
       </form>
     </div>
