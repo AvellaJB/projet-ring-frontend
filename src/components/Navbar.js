@@ -1,11 +1,14 @@
 import React from "react";
 import "./Navbar.css";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 function Navbar({ connected, setConnected }) {
   /* Création de la fonction disconnect qui est lancée lorsque l'on appuie sur le bouton. */
+  const navigate = useNavigate();
+
   function disconnect() {
-    localStorage.removeItem("connected");
+    navigate("/");
+    localStorage.removeItem("jwt");
     setConnected(false);
   }
 

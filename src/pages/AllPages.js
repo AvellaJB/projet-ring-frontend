@@ -17,8 +17,8 @@ function AllPages() {
 
   /* Le useEffect s'assure de la création de l'élément localStorage pour la persistence de la connexion. */
   useEffect(() => {
-    const connected = localStorage.getItem("connected");
-    setConnected(connected === "true");
+    const hasJwt = localStorage.getItem("jwt");
+    setConnected(Boolean(hasJwt));
   }, []);
 
   return (

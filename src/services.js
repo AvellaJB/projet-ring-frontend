@@ -8,11 +8,20 @@ const base = axios.create({ baseURL });
 const services = {
   /* Cette fonction récupère la liste des livre de la BDD Mongo */
   getBookList() {
-    return base.get("/bibliotheque").then((res) => res.data);
+    const token = localStorage.getItem("jwt");
+    return base
+      .get("/bibliotheque", { headers: { Authorization: `Bearer ${token}` } })
+      .then((res) => res.data);
   },
   /* Cette fonction ajoute un livre à la BDD mongo */
   AddBook(body) {
-    return base.post("/add-book", body).then((res) => res.data);
+    const token = localStorage.getItem("jwt");
+    console.log(token);
+    return base
+      .post("/add-book", body, {
+        headers: { Authorization: `Bearer ${token}` },
+      })
+      .then((res) => res.data);
   },
   /* Cette fonction envoie les infos de connexions aux BACK END, la vérification
   des correspondance de mail / mdp se fait dans le back. */
