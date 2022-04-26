@@ -1,6 +1,6 @@
 import axios from "axios";
 /* Notre fichiers services gère les connexion à notre BDD MongoDB */
-const baseURL = "http://localhost:1664";
+const baseURL = process.env.REACT_APP_API_URL;
 
 const base = axios.create({ baseURL });
 

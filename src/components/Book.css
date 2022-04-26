@@ -9,8 +9,17 @@
     padding: 2rem;
 }
 
+h2 {
+    background-color: rgba(209, 225, 245, 0.24) ;
+}
+
+h3  {
+    background-color: rgba(209, 225, 245, 0.24) ;
+}
+
 .img-container{
     width: 20rem;
+    background-color: rgba(209, 225, 245, 0.24) ;
 }
 
 img {
