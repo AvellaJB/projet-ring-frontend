@@ -23,6 +23,15 @@ const services = {
       .then((res) => res.data);
   },
 
+  deleteBookById(id) {
+    const token = localStorage.getItem("jwt");
+    return base
+      .delete(`/${id}`, {
+        headers: { Authorization: `Bearer ${token}` },
+      })
+      .then((res) => res.data);
+  },
+
   /* Cette fonction envoie les infos de connexions aux BACK END, la vérification
   des correspondance de mail / mdp se fait dans le back. */
   login(body) {

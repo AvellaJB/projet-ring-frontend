@@ -32,7 +32,12 @@ function Bibliotheque() {
   useEffect(() => {
     fetchAndSetBooks();
   }, []);
-  console.log(books);
+
+  function deleteBookAndRefresh(id) {
+    services.deleteBookById(id).then(() => {
+      fetchAndSetBooks();
+    });
+  }
 
   return (
     <div>
@@ -42,7 +47,10 @@ function Bibliotheque() {
         {/* On utilise le state books pour map sur chaque livre et envoyer
         l'ISBN à notre livre intelligent. */}
         {books.map((book) => (
-          <SmartBook ISBN={book.ISBN} bookID={book._id} />
+          <SmartBook
+            ISBN={book.ISBN}
+            onDeleteBook={() => deleteBookAndRefresh(book._id)}
+          />
         ))}
       </div>
     </div>
