@@ -27,8 +27,8 @@ export function AddBook({ refresh }) {
   }
   return (
     <div>
-      <form onSubmit={handleSubmit}>
-        <div>
+      <form onSubmit={handleSubmit} className="formCSS">
+        <div className="formCSS">
           <h1>Ajoutez un livre,</h1>
           <input
             className="inputAddBook"
@@ -38,6 +38,10 @@ export function AddBook({ refresh }) {
             value={value}
             onChange={(e) => setValue(e.target.value)}
           />
+          <p className="textISBN">
+            Le numéro ISBN est unique à votre livre. Vous le trouverez au dos de
+            l'oeuvre, c'est un code à 10 ou 13 chiffres.
+          </p>
         </div>
         <div>
           <button className="buttonAddBook">Ajouter</button>

@@ -40,7 +40,7 @@ function Bibliotheque() {
   }
 
   return (
-    <div>
+    <div className="addBookComponent">
       <AddBook refresh={fetchAndSetBooks} />
       <h1>Mes livres.</h1>
       <div className="library">

@@ -25,7 +25,7 @@ function Home() {
             </div>
             <div className="CTA">
               <button onClick={goToLogin}>
-                Get Started <AiOutlineArrowRight />
+                Get Started <AiOutlineArrowRight className="arrow" />
               </button>
             </div>
           </div>

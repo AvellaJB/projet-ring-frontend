@@ -22,6 +22,9 @@
 .CTA {
   padding: 2rem;
 }
+.arrow {
+  background-color: cyan;
+}
 
 button {
   background-color: cyan;
@@ -31,12 +34,12 @@ button {
   display: flex;
   align-items: center;
   border-radius: 1rem;
-  box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px,
+    rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
   cursor: pointer;
 }
 
-
-h2{
+h2 {
   font-weight: 300;
 }
 
@@ -52,8 +55,8 @@ h1 {
   padding: 7rem;
 }
 
-.hero-section, img {
+.hero-section,
+img {
   object-fit: cover;
   overflow: hidden;
 }
-
