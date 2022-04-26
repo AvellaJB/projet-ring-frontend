@@ -6,6 +6,8 @@ import { useNavigate } from "react-router-dom";
 function Login({ setConnected }) {
   /* On décide de stocker les infos du formulaire dans un State. */
 
+  const navigate = useNavigate();
+
   const [body, setBody] = useState({
     mail: "",
     password: "",
@@ -37,6 +39,7 @@ function Login({ setConnected }) {
         const { jwt } = result;
         localStorage.setItem("jwt", jwt);
         setConnected(true);
+        navigate("/library");
       })
       .catch((err) => {
         console.log(err.response);

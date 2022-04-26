@@ -41,13 +41,14 @@ function Bibliotheque() {
 
   return (
     <div>
-      <AddBook />
+      <AddBook refresh={fetchAndSetBooks} />
       <h1>Mes livres.</h1>
       <div className="library">
         {/* On utilise le state books pour map sur chaque livre et envoyer
         l'ISBN à notre livre intelligent. */}
         {books.map((book) => (
           <SmartBook
+            key={book._id}
             ISBN={book.ISBN}
             onDeleteBook={() => deleteBookAndRefresh(book._id)}
           />

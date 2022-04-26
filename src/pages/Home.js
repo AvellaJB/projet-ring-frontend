@@ -1,8 +1,15 @@
 import "./Home.css";
 import heroimg from "../pages/heroimg.jpg";
 import { AiOutlineArrowRight } from "react-icons/ai";
+import { useNavigate } from "react-router-dom";
 
 function Home() {
+  const navigate = useNavigate();
+
+  function goToLogin() {
+    navigate("/login");
+  }
+
   return (
     <div>
       <div className="home-container">
@@ -17,7 +24,7 @@ function Home() {
               </h2>
             </div>
             <div className="CTA">
-              <button>
+              <button onClick={goToLogin}>
                 Get Started <AiOutlineArrowRight />
               </button>
             </div>

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import services from "../services";
 import "./AddBook.css";
 
@@ -6,7 +6,9 @@ function getFormValue(elements, name) {
   return elements[name]?.value;
 }
 
-export function AddBook() {
+export function AddBook({ refresh }) {
+  const [value, setValue] = useState("");
+
   function handleSubmit(e) {
     e.preventDefault();
     const elements = e.target.elements;
@@ -17,7 +19,10 @@ export function AddBook() {
     }
     services
       .AddBook({ ISBN })
-      .then(() => "/add-book")
+      .then(() => {
+        refresh();
+        setValue("");
+      })
       .catch((err) => console.log(err));
   }
   return (
@@ -30,6 +35,8 @@ export function AddBook() {
             name="ISBN"
             type="text"
             placeholder="Entrez le numéro ISBN"
+            value={value}
+            onChange={(e) => setValue(e.target.value)}
           />
         </div>
         <div>

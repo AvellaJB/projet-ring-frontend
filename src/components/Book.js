@@ -1,22 +1,20 @@
 import React from "react";
 import "./Book.css";
 
-function Book(bookDetails) {
+function Book({ bookDetails, onDeleteBook }) {
   /* Ici c'est notre livre simple qui prend les détails envoyés par l'API de OpenLibrary et
 les affiches. La mise en forme est également gérée ici (CSS) */
 
-  console.log(bookDetails);
-
   return (
     <div className="book-container">
-      <h2>{bookDetails.bookDetails.title}</h2>
+      <h2>{bookDetails.title}</h2>
       <div className="img-container">
         <img
-          src={`https://covers.openlibrary.org/b/isbn/${bookDetails.bookDetails.isbn_13}-L.jpg`}
+          src={`https://covers.openlibrary.org/b/isbn/${bookDetails.isbn_13}-L.jpg`}
         />
       </div>
-      <h3>{bookDetails.bookDetails.publish_date}</h3>
-      <button className="button-book" onClick={bookDetails.onDeleteBook}>
+      <h3>{bookDetails.publish_date}</h3>
+      <button className="button-book" onClick={onDeleteBook}>
         Supprimer
       </button>
     </div>
